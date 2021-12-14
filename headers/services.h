@@ -6,11 +6,15 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 12:00:33 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/14 12:17:53 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/14 15:25:24 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SERVICES_H
 # define SERVICES_H
+
+# include "types.h"
+
+t_board	get_fun_board(t_board board);
 
 #endif

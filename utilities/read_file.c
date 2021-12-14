@@ -6,7 +6,7 @@
 /*   By: npiya-is <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 22:16:50 by npiya-is          #+#    #+#             */
-/*   Updated: 2021/12/14 14:38:28 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/14 15:48:46 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -25,6 +25,7 @@ t_file	read_file(char *filename, t_file file)
 {
 	file.name = malloc(str_len(filename) * sizeof(char));
 	file.msg = malloc(50 * sizeof(char));
+	file.data = malloc(BUF_SIZE * 4 * sizeof(char));
 	file.name = str_copy(file.name, filename);
 	file = open_file(file);
 	if (file.desc == -1)
@@ -60,6 +61,7 @@ t_file	read_buffer(t_file file)
 		str_concat(file.data, buf);
 		ret = read(file.desc, buf, BUF_SIZE);
 	}
+	str_print(file.data);
 	free(buf);
 	return (file);
 }

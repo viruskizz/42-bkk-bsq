@@ -6,25 +6,24 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 01:38:41 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/14 14:20:55 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/14 16:08:51 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include <stdio.h>
+#include <stdlib.h>
 #include "headers/utils.h"
 #include "headers/types.h"
+#include "headers/services.h"
 
 int	main(void)
 {
-	t_file file;
+	t_board	board;
 
 	str_print("It's work\n");
-	file.desc = 0;
-	file = read_file("assets/fun_board.txt", file);
-	if (file.desc == -1)
-	{
-		str_print(file.msg);
-		return (0);
-	}
-	str_print(file.data);
+	board.width = 0;
+	board = get_fun_board(board);
+	printf("width: %d\n", board.width);
+	printf("height: %d\n", board.height);
+	printf("obs: %c\n", board.obs);
 	return (0);
 }

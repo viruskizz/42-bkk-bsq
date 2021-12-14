@@ -26,8 +26,11 @@ cat $filename
 echo "";
 
 gcc -Wall -Wextra -Werror $main utilities/*.c -o runner.out
-echo "\033[1;32;47m=== Result ===\033[m";
-./runner.out
 
-#Clean
-rm runner.out
+if [[ -f "runner.out" ]]
+then
+	echo "\033[1;32;47m=== Result ===\033[m";
+	./runner.out
+	#Clean
+	rm runner.out
+fi

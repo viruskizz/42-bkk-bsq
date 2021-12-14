@@ -6,15 +6,15 @@
 /*   By: npiya-is <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 22:16:50 by npiya-is          #+#    #+#             */
-/*   Updated: 2021/12/14 02:52:31 by npiya-is         ###   ########.fr       */
+/*   Updated: 2021/12/14 12:10:54 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-#include<stdio.h>
-#include<stdlib.h>
-#include<fcntl.h>
-#include"eof.h"
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include "../headers/types.h"
 
 int	read_files(char *file, char *buff, int buff_size)
 {

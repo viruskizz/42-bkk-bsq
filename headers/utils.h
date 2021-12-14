@@ -6,14 +6,14 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 10:15:08 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/14 10:16:21 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/14 12:17:08 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef UTILS_H
-#define UTILS_H
+# define UTILS_H
 
-#include <unistd.h>
+# include <unistd.h>
 
 void	str_print(char *str);
 

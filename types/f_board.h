@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 02:37:11 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/14 10:08:23 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/14 12:13:09 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ typedef struct f_board
 	char	obs;
 	char	empty;
 	char	*data;
-}	t_board
+}	t_f_board;
 
 #endif

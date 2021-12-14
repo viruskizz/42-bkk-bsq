@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   types.h                                            :+:      :+:    :+:   */
+/*   square.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: npiya-is <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 10:10:12 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/14 21:26:51 by npiya-is         ###   ########.fr       */
+/*   Created: 2021/12/14 12:46:58 by npiya-is          #+#    #+#             */
+/*   Updated: 2021/12/14 17:24:09 by npiya-is         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TYPES_H
-# define TYPES_H
+#include "point.h"
 
-# include "../types/file.h"
-# include "../types/board.h"
-# include "../types/eof.h"
-# include "../types/point.h"
-# include "../types/point_type.h"
-# include "../types/square.h"
+#ifndef SQUARE_H
+# define SQUARE_H
+
+typedef struct s_square
+{
+	int	len;
+	t_point		point;
+}	t_square;
 
 #endif

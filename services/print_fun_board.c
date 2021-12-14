@@ -6,12 +6,13 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 19:05:08 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/14 19:12:39 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/14 21:06:15 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "../headers/types.h"
+
 void	print_fun_board(t_board board)
 {
 	int	i;

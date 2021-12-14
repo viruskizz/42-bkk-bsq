@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   str_copy.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 10:15:08 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/14 14:06:49 by tsomsa           ###   ########.fr       */
+/*   Created: 2021/12/14 13:38:52 by tsomsa            #+#    #+#             */
+/*   Updated: 2021/12/14 14:24:07 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+char	*str_copy(char *dst, char *src)
+{
+	int	i;
 
-# include <unistd.h>
-# include "types.h"
-
-void	str_print(char *str);
-int		str_len(char *str);
-char	*str_copy(char *dest, char *src);
-char	*str_concat(char *dest, char *src);
-
-t_file	read_file(char *filename, t_file file);
-
-#endif
+	i = 0;
+	while (*src)
+	{
+		dst[i] = *src;
+		src++;
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
+}

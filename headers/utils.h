@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 01:38:41 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/14 10:16:52 by tsomsa           ###   ########.fr       */
+/*   Created: 2021/12/14 10:15:08 by tsomsa            #+#    #+#             */
+/*   Updated: 2021/12/14 10:16:21 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "headers/utils.h"
+#ifndef UTILS_H
+#define UTILS_H
 
-int	main(void)
-{
-	str_print("It's work");
-	return (0);
-}
+#include <unistd.h>
+
+void	str_print(char *str);
+
+#endif

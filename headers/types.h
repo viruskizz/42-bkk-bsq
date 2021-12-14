@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   types.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 01:38:41 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/14 10:16:52 by tsomsa           ###   ########.fr       */
+/*   Created: 2021/12/14 10:10:12 by tsomsa            #+#    #+#             */
+/*   Updated: 2021/12/14 10:12:14 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "headers/utils.h"
+#ifndef TYPES_H
+# define TYPES_H
 
-int	main(void)
-{
-	str_print("It's work");
-	return (0);
-}
+include "../types/f_board.h"
+include "../types/board.h"
+
+#endif

@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   str_print.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 01:38:41 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/14 10:16:52 by tsomsa           ###   ########.fr       */
+/*   Created: 2021/12/14 10:13:50 by tsomsa            #+#    #+#             */
+/*   Updated: 2021/12/14 10:14:35 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "headers/utils.h"
+#include "../headers/utils.h"
 
-int	main(void)
+void	str_print(char *str)
 {
-	str_print("It's work");
-	return (0);
+	while (*str)
+	{
+		write(1, str, 1);
+		str++;
+	}
 }

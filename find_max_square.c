@@ -6,7 +6,7 @@
 /*   By: npiya-is <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 12:35:50 by npiya-is          #+#    #+#             */
-/*   Updated: 2021/12/14 21:21:42 by npiya-is         ###   ########.fr       */
+/*   Updated: 2021/12/14 21:57:07 by npiya-is         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include "headers/types.h"
-
+int	g_len;
 int	able_to_fill(t_square square, char table[5][5], t_board board);
 
 void	find_max_square(char table[5][5], t_board board)
@@ -34,16 +34,13 @@ void	find_max_square(char table[5][5], t_board board)
 		while (w < board.width)
 		{
 			square.point.y = w;
-			if(able_to_fill(square, table, board))
+			g_len = able_to_fill(square, table, board);
+			if (g_len > board.sq.len)
 			{
-				printf("square x : %d y : %d len : %d\n",square.point.x,square.point.y,square.len);
-				if (square.len > board.sq.len)
-				{
-					board.sq.len = square.len;
-					board.sq.point.x = square.point.x;
-					board.sq.point.y = square.point.y;
-					printf("board x : %d y : %d len : %d\n",board.sq.point.x,board.sq.point.y,board.sq.len);
-				}
+				board.sq.len = g_len;
+				board.sq.point.x = square.point.x;
+				board.sq.point.y = square.point.y;
+				printf("board x : %d y : %d len : %d\n",board.sq.point.x,board.sq.point.y,board.sq.len);
 			}
 			w++;
 		}
@@ -123,8 +120,9 @@ int	able_to_fill(t_square square, char table[5][5], t_board board)
 	}
 //	if (check_in_square(table , square))
 //		return (able_to_fill(square, table, board));
-	printf(" last move col row : %d, col : %d len : %d\n", row, col, square.len); 
-	return (1);
+	printf(" last move col row : %d, col : %d len : %d\n", row, col, square.len);
+	g_len = square.len;
+	return (square.len);
 }
 
 //int	chaeck_in_square(
@@ -163,6 +161,7 @@ int	main(void)
 	board.height = 5;
 	board.obs = 'o';
 	board.empty = '.';
+	board.sq.len = 0;
 	find_max_square(table, board);
 	printf("square len : %d\n", board.sq.len);
 	printf("square x : %d\n", board.sq.point.x);

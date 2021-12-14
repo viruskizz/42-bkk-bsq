@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   types.h                                            :+:      :+:    :+:   */
+/*   point_type.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 10:10:12 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/14 12:03:17 by tsomsa           ###   ########.fr       */
+/*   Created: 2021/12/14 11:01:27 by tsomsa            #+#    #+#             */
+/*   Updated: 2021/12/14 11:08:19 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TYPES_H
-# define TYPES_H
+#ifndef POINT_TYPE_H
+# define POINT_TYPE_H
 
-include "../types/file.h"
-include "../types/f_board.h"
-include "../types/board.h"
-include "../types/eof.h"
-include "../types/point.h"
-include "../types/point_type.h"
+typedef enum e_point_type
+{
+	OBS,
+	EMPTY,
+	FULL
+}	t_point
 
 #endif

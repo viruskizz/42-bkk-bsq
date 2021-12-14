@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   services.h                                         :+:      :+:    :+:   */
+/*   str_len.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 12:00:33 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/14 19:21:44 by tsomsa           ###   ########.fr       */
+/*   Created: 2021/12/14 13:56:30 by tsomsa            #+#    #+#             */
+/*   Updated: 2021/12/14 14:14:15 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERVICES_H
-# define SERVICES_H
+int	str_len(char *str)
+{
+	int	i;
 
-# include "types.h"
-
-t_board	get_fun_board(char *filename, t_board board);
-void	print_fun_board(t_board board);
-
-#endif
+	i = 0;
+	while (*str)
+	{
+		str++;
+		i++;
+	}
+	return (i);
+}

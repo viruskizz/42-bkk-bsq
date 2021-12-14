@@ -25,7 +25,7 @@ perl generate_fun_board.pl $width $height $dens> assets/fun_board.txt
 cat $filename
 echo "";
 
-gcc -Wall -Wextra -Werror $main utilities/*.c -o runner.out
+gcc -Wall -Wextra -Werror $main services/*.c utilities/*.c -o runner.out
 
 if [[ -f "runner.out" ]]
 then

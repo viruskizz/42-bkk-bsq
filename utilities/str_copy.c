@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   services.h                                         :+:      :+:    :+:   */
+/*   str_copy.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 12:00:33 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/14 19:21:44 by tsomsa           ###   ########.fr       */
+/*   Created: 2021/12/14 13:38:52 by tsomsa            #+#    #+#             */
+/*   Updated: 2021/12/14 14:24:07 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERVICES_H
-# define SERVICES_H
+char	*str_copy(char *dst, char *src)
+{
+	int	i;
 
-# include "types.h"
-
-t_board	get_fun_board(char *filename, t_board board);
-void	print_fun_board(t_board board);
-
-#endif
+	i = 0;
+	while (*src)
+	{
+		dst[i] = *src;
+		src++;
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
+}

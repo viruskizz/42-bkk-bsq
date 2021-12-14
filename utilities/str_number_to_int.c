@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   f_board.h                                            :+:      :+:    :+: */
+/*   str_number_to_int.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 02:37:11 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/14 12:13:09 by tsomsa           ###   ########.fr       */
+/*   Created: 2021/12/14 16:41:44 by tsomsa            #+#    #+#             */
+/*   Updated: 2021/12/14 16:44:37 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef F_BOARD_H
-# define F_BOARD_H
-
-typedef struct f_board
+int	str_number_to_int(char *str)
 {
-	int		file_desc;
-	char	*file_msg[50];
-	int		height;
-	int		width;
-	char	obs;
-	char	empty;
-	char	*data;
-}	t_f_board;
+	int	nb;
 
-#endif
+	nb = 0;
+	while (*str)
+	{
+		nb = (nb * 10) + (*str - '0');
+		str++;
+	}
+	return (nb);
+}

@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 10:55:52 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/14 12:12:26 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/14 13:58:24 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 typedef struct s_file
 {
 	int		desc;
-	char	msg;
+	char	*name;
+	char	*msg;
 	char	*data;
 }	t_file;
 

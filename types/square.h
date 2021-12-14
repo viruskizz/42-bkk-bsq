@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   board.h                                            :+:      :+:    :+:   */
+/*   square.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: npiya-is <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 10:05:51 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/14 21:12:39 by npiya-is         ###   ########.fr       */
+/*   Created: 2021/12/14 12:46:58 by npiya-is          #+#    #+#             */
+/*   Updated: 2021/12/14 17:24:09 by npiya-is         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "square.h"
-#ifndef BOARD_H
-# define BOARD_H
+#include "point.h"
 
-typedef struct s_board
+#ifndef SQUARE_H
+# define SQUARE_H
+
+typedef struct s_square
 {
-	int		width;
-	int		height;
-	char	obs;
-	char	empty;
-	char	**data;
-	t_square	sq;
-}	t_board;
+	int	len;
+	t_point		point;
+}	t_square;
 
 #endif

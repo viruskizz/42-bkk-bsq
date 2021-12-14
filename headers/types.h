@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 10:10:12 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/14 12:16:40 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/14 16:34:48 by npiya-is         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@
 # include "../types/eof.h"
 # include "../types/point.h"
 # include "../types/point_type.h"
+# include "../types/square.h"
 
 #endif

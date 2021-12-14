@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   board.h                                            :+:      :+:    :+:   */
+/*   can_printable_full.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 10:05:51 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/14 22:26:14 by tsomsa           ###   ########.fr       */
+/*   Created: 2021/12/14 22:34:57 by tsomsa            #+#    #+#             */
+/*   Updated: 2021/12/15 00:14:05 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "../headers/types.h"
 
-#ifndef BOARD_H
-# define BOARD_H
-
-# include "square.h"
-
-typedef struct s_board
+int	can_printable_full(t_board board, int i, int j)
 {
-	int			width;
-	int			height;
-	char		obs;
-	char		empty;
-	char		full;
-	char		**data;
-	t_square	sq;
-}	t_board;
-
-#endif
+	if ((board.sq.x0 <= i && i <= board.sq.x0 + board.sq.len)
+		&& (board.sq.y0 <= j && j <= board.sq.y0 + board.sq.len)
+		&& board.data[i][j] != board.obs)
+		return (1);
+	else
+		return (0);
+}

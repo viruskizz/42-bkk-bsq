@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   services.h                                         :+:      :+:    :+:   */
+/*   str_number_to_int.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 12:00:33 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/14 19:21:44 by tsomsa           ###   ########.fr       */
+/*   Created: 2021/12/14 16:41:44 by tsomsa            #+#    #+#             */
+/*   Updated: 2021/12/14 16:44:37 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERVICES_H
-# define SERVICES_H
+int	str_number_to_int(char *str)
+{
+	int	nb;
 
-# include "types.h"
-
-t_board	get_fun_board(char *filename, t_board board);
-void	print_fun_board(t_board board);
-
-#endif
+	nb = 0;
+	while (*str)
+	{
+		nb = (nb * 10) + (*str - '0');
+		str++;
+	}
+	return (nb);
+}

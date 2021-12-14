@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 01:38:41 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/14 16:08:51 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/14 19:21:28 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -21,9 +21,10 @@ int	main(void)
 
 	str_print("It's work\n");
 	board.width = 0;
-	board = get_fun_board(board);
+	board = get_fun_board("assets/fun_board.txt", board);
 	printf("width: %d\n", board.width);
 	printf("height: %d\n", board.height);
 	printf("obs: %c\n", board.obs);
+	print_fun_board(board);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: npiya-is <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 12:35:50 by npiya-is          #+#    #+#             */
-/*   Updated: 2021/12/14 21:17:13 by npiya-is         ###   ########.fr       */
+/*   Updated: 2021/12/14 21:21:42 by npiya-is         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	find_max_square(char table[5][5], t_board board)
 					printf("board x : %d y : %d len : %d\n",board.sq.point.x,board.sq.point.y,board.sq.len);
 				}
 			}
-			square.len = 0;
 			w++;
 		}
 		h++;

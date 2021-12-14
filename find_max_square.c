@@ -6,7 +6,7 @@
 /*   By: npiya-is <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 12:35:50 by npiya-is          #+#    #+#             */
-/*   Updated: 2021/12/14 21:57:07 by npiya-is         ###   ########.fr       */
+/*   Updated: 2021/12/14 22:04:04 by npiya-is         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int	g_len;
 int	able_to_fill(t_square square, char table[5][5], t_board board);
 
-void	find_max_square(char table[5][5], t_board board)
+t_board	find_max_square(char table[5][5], t_board board)
 {
 	int	h;
 	int	w;
@@ -46,6 +46,7 @@ void	find_max_square(char table[5][5], t_board board)
 		}
 		h++;
 	}
+	return (board);
 }
 
 int	able_to_fill(t_square square, char table[5][5], t_board board)
@@ -161,8 +162,7 @@ int	main(void)
 	board.height = 5;
 	board.obs = 'o';
 	board.empty = '.';
-	board.sq.len = 0;
-	find_max_square(table, board);
+	board = find_max_square(table, board);
 	printf("square len : %d\n", board.sq.len);
 	printf("square x : %d\n", board.sq.point.x);
 	printf("square y : %d\n", board.sq.point.y);

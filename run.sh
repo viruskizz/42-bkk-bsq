@@ -6,7 +6,7 @@ if [[ -z $1 && -z $2 && -z $3 ]]
 then
 	width=20
 	height=20
-	dens=5
+	dens=4
 else
 	width=$1
 	height=$2
@@ -21,7 +21,7 @@ else
 fi
 
 echo "${RED}Generate assets/fun_board.txt${RESET}"
-# perl generate_fun_board.pl $width $height $dens> assets/fun_board.txt
+perl generate_fun_board.pl $width $height $dens> assets/fun_board.txt
 cat $filename
 echo "";
 

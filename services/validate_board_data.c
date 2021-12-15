@@ -6,10 +6,9 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 22:47:06 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/16 01:50:58 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/16 03:26:59 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 #include <stdlib.h>
 #include "../headers/utils.h"
 
@@ -65,11 +64,13 @@ int	is_same_line_length(char *str)
 	width = 0;
 	while (*str != '\n')
 		str++;
+	str++;
 	while (*str != '\n')
 	{
 		width++;
 		str++;
 	}
+	str++;
 	while (*str)
 	{
 		count = 0;

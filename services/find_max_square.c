@@ -6,7 +6,7 @@
 /*   By: npiya-is <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 12:35:50 by npiya-is          #+#    #+#             */
-/*   Updated: 2021/12/16 01:02:18 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/16 03:30:42 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,15 @@ int	expand(t_square sq, t_board b)
 	k = 0;
 	if (sq.y0 + sq.len == b.height || sq.x0 + sq.len == b.width)
 		return (sq.len);
-	while (k <= sq.len && (k + sq.len) < b.height)
+	while (k <= sq.len && (sq.x0 + sq.len) < b.height && (sq.y0 + sq.len) < b.width)
 	{
 		if (b.data[sq.y0 + sq.len][sq.x0 + k] == b.obs)
 			return (sq.len);
 		if (b.data[sq.y0 + k][sq.x0 + sq.len] == b.obs)
+			return (sq.len);
+		if (b.data[sq.y0 + sq.len - k][sq.x0 + sq.len] == b.obs)
+			return (sq.len);
+		if (b.data[sq.y0 + sq.len][sq.x0 + sq.len - k] == b.obs)
 			return (sq.len);
 		k++;
 	}

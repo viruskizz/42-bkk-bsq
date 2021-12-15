@@ -6,7 +6,7 @@
 /*   By: npiya-is <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 12:35:50 by npiya-is          #+#    #+#             */
-/*   Updated: 2021/12/15 15:11:45 by npiya-is         ###   ########.fr       */
+/*   Updated: 2021/12/15 15:44:16 by npiya-is         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ t_board	find_max_square(t_board board)
 		j = 0;
 		while (j < board.width)
 		{
-			temp_sq.x0 = i;
-			temp_sq.y0 = j;
+			temp_sq.x0 = j;
+			temp_sq.y0 = i;
 			if (able_to_fill(temp_sq, board))
 			{
 				temp_sq.len = able_to_fill(temp_sq, board);
@@ -47,7 +47,7 @@ t_board	find_max_square(t_board board)
 		}
 		i++;
 	}
-	printf("return x0 : %d , y0 : %d, len ; %d\n",board.sq.x0, board.sq.y0, board.sq.len);
+	printf("return y0 : %d , x0 : %d, len ; %d\n",board.sq.y0, board.sq.x0, board.sq.len);
 	return (board);
 }	
 
@@ -61,13 +61,13 @@ t_board	set_max_square(t_square square, t_board board)
 
 int	able_to_fill(t_square sq, t_board b)
 {
-	if (sq.x0 < b.height - 1 && sq.y0 < b.width - 1)
+	if (sq.x0 < b.width - 1 && sq.y0 < b.height - 1)
 	{
 		if (min_size(sq, b))
 		{
 			sq.len = 2;
 			sq.len = expand(sq, b);
-			return (sq.len - 1);
+			return (sq.len);
 		}
 	}
 	return (0);	
@@ -75,27 +75,27 @@ int	able_to_fill(t_square sq, t_board b)
 
 int	min_size(t_square sq, t_board b)
 {
-	if (b.data[sq.x0][sq.y0] != b.obs && b.data[sq.x0 + 1][sq.y0] != b.obs
-			&& b.data[sq.x0][sq.y0 + 1] != b.obs 
-				&& b.data[sq.x0 + 1][sq.y0 + 1] != b.obs)
+	if (b.data[sq.y0][sq.x0] != b.obs && b.data[sq.y0 + 1][sq.x0] != b.obs
+			&& b.data[sq.y0][sq.x0 + 1] != b.obs 
+				&& b.data[sq.y0 + 1][sq.x0 + 1] != b.obs)
 					return (1);
 	return (0);
 }
 
 int	expand(t_square sq, t_board b)
 {
-	int	i;
+	int	k;
 
-	i = 0;
-	if (sq.x0 + sq.len == b.height  || sq.y0 + sq.len == b.width)
+	k = 0;
+	if (sq.y0 + sq.len == b.height  || sq.x0 + sq.len == b.width)
 		return (sq.len);
-	while (i <= sq.len && (i + sq.len) < b.height)
+	while (k <= sq.len && (k + sq.len) < b.height)
 	{
-		if (b.data[sq.x0 + sq.len][sq.y0 + i] == b.obs)
+		if (b.data[sq.y0 + sq.len][sq.x0 + k] == b.obs)
 			return (sq.len);
-		if (b.data[sq.x0 + i][sq.y0 + sq.len] == b.obs)
+		if (b.data[sq.y0 + k][sq.x0 + sq.len] == b.obs)
 			return (sq.len);
-		i++;
+		k++;
 	}
 	sq.len++;
 	return (expand(sq, b));

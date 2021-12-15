@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 19:05:08 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/15 09:04:49 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/15 13:52:42 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,5 @@ void	print_point(t_board board, int i, int j)
 		write(1, &board.full, 1);
 	else
 		write(1, &board.data[i][j], 1);
+	write(1, " ", 1);
 }

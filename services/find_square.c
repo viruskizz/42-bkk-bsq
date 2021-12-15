@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 07:09:32 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/15 09:07:16 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/15 14:19:01 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -66,12 +66,16 @@ t_square	find_biggest_square(t_square square, t_board board)
 			j++;
 		}
 		square.len = j - square.x0;
+		// log
+		if (square.y0 == 0 && (square.x0 == 11 || square.x0 == 12))
+			printf("%d,%d > %d:%d = %d\n", i, j, square.y0, square.x0, square.len);
+
 		i++;
 	}
 	if (i - square.y0 <= j - square.x0)
 		square.len = i - square.y0;
-	else
-		square.len = 0;
+//	else
+//		square.len = 0;
 	printf("%d:%d = %d\n", square.y0, square.x0, square.len);
 	return square;
 }

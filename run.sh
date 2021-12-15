@@ -21,7 +21,7 @@ else
 fi
 
 echo "${RED}Generate assets/fun_board.txt${RESET}"
-# perl generate_fun_board.pl $width $height $dens> assets/fun_board.txt
+perl generate_fun_board.pl $width $height $dens> assets/fun_board.txt
 cat $filename
 echo "";
 

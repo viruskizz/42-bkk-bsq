@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 01:38:41 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/15 09:07:08 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/15 16:01:28 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -22,12 +22,12 @@ int	main(void)
 	str_print("It's work\n");
 	board.width = 0;
 	board = get_fun_board("assets/fun_board.txt", board);
-	printf("width: %d\n", board.width);
-	printf("height: %d\n", board.height);
-	printf("obs: %c\n", board.obs);
-	printf("empty: %c\n", board.empty);
-	printf("full: %c\n", board.full);
-	board = find_square(board); 
+	// printf("width: %d\n", board.width);
+	// printf("height: %d\n", board.height);
+	// printf("obs: %c\n", board.obs);
+	// printf("empty: %c\n", board.empty);
+	// printf("full: %c\n", board.full);
+	board = find_max_square(board); 
 	// board.sq.x0 = 0;
 	// board.sq.y0 = 0;
 	// board.sq.len = 4;

@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 05:36:19 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/16 05:54:55 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/16 06:02:07 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	executor(t_file file)
 	free(board.data);
 }
 
-file	runner_validate_file(t_file file)
+t_file	runner_validate_file(t_file file)
 {
 	if (file.desc == -1)
 	{

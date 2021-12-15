@@ -6,7 +6,7 @@
 #    By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 00:29:52 by tsomsa            #+#    #+#              #
-#    Updated: 2021/12/16 03:09:06 by tsomsa           ###   ########.fr        #
+#    Updated: 2021/12/16 05:58:39 by tsomsa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #Color
@@ -22,7 +22,7 @@ y = 20
 dens = 5
 files=main.c services/*.c utilities/*c
 
-all: gen_board compile execute
+all: compile
 
 gen_board:
 	@echo "${RED}Generating Fun Board follow by this rules...${RESET}"

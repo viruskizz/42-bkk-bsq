@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 01:38:41 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/16 03:46:08 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/16 05:43:48 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -14,78 +14,37 @@
 #include "headers/types.h"
 #include "headers/services.h"
 #include "headers/constants.h"
+#include <unistd.h>
 
-void	runner(int argc, char *argv[]);
-void	executor(t_file file);
-void	print_error_msg(char *msg);
+void	get_input(void);
 
 int	main(int argc, char *argv[])
 {
 	if (argc >= 2)
-	{
 		runner(argc, argv);
-	}
-	str_print(C_RED);
-	str_print("== FINISH!! ==\n");
-	str_print(C_RESET);
+	else
+		get_input();
+	str_print_color("== FINISH!! ==\n", C_RED);
 	return (0);
 }
 
-void	runner(int argc, char *argv[])
+void	get_input(void)
 {
-	t_file file;
-	int	i;
+	char	input[100];
+	char	buf;
+	int		i;
+	char	*arr[2];
 
-	i = 1;
-	while (i < argc)
+	str_print("INPUT:\n");
+	i = 0;
+	while (read(0, &buf, 1) > 0 && i < 100)
 	{
-		file.desc = 0;
-		file = read_file(argv[i], file);
-		str_print("FILE: ");
-		str_print(file.name);
-		str_print("\n");
-		if (file.desc == -1)
-		{
-			print_error_msg(file.msg);
-			i++;
-			continue ;
-		}
-		file = validate_map_header_file(file);
-		if (file.desc == -1)
-		{
-			print_error_msg(file.msg);
-			i++;
-			continue ;
-		}
-		executor(file);
-		free(file.data);
-		str_print("\n");
+		if (buf == '\n')
+			break ;
+		input[i] = buf;
 		i++;
 	}
-}
-
-void	executor(t_file file)
-{
-	t_board	board;
-
-	board.width = 0;
-	board = set_board_desc(file, board);
-	board = validate_board_data(file, board);
-	if (!board.is_valid)
-	{
-		print_error_msg(board.msg);
-		return ;
-	}
-	board = get_fun_board(file, board);
-	board = find_max_square(board);
-	print_fun_board(board);
-	free(board.data);
-}
-
-void	print_error_msg(char *msg)
-{
-	str_print(C_RED);
-	str_print(msg);
-	str_print(C_RESET);
-	str_print("\n\n");
+	input[i] = '\0';
+	arr[1] = input;
+	runner(2, arr);
 }

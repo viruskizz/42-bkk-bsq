@@ -6,15 +6,16 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 22:47:06 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/16 03:26:59 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/16 04:04:25 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
 #include "../headers/utils.h"
 
-int	count_line(char *str);
-int	is_valid_body_characters(char *str, t_board board);
-int	is_same_line_length(char *str);
+char	*skip_head(char *str);
+int		count_line(char *str);
+int		is_valid_body_characters(char *str, t_board board);
+int		is_same_line_length(char *str);
 
 t_board	validate_board_data(t_file file, t_board board)
 {
@@ -56,15 +57,21 @@ int	is_valid_body_characters(char *str, t_board board)
 	return (1);
 }
 
+char	*skip_head(char *str)
+{
+	while (*str != '\n')
+		str++;
+	str++;
+	return (str);
+}
+
 int	is_same_line_length(char *str)
 {
 	int	width;
 	int	count;
 
 	width = 0;
-	while (*str != '\n')
-		str++;
-	str++;
+	str = skip_head(str);
 	while (*str != '\n')
 	{
 		width++;

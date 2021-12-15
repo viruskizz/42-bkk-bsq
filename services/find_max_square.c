@@ -6,12 +6,11 @@
 /*   By: npiya-is <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 12:35:50 by npiya-is          #+#    #+#             */
-/*   Updated: 2021/12/16 03:30:42 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/16 03:51:00 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 #include "../headers/types.h"
 
 int		min_size(t_square sq, t_board b);
@@ -85,7 +84,9 @@ int	expand(t_square sq, t_board b)
 	k = 0;
 	if (sq.y0 + sq.len == b.height || sq.x0 + sq.len == b.width)
 		return (sq.len);
-	while (k <= sq.len && (sq.x0 + sq.len) < b.height && (sq.y0 + sq.len) < b.width)
+	while (k <= sq.len
+		&& (sq.x0 + sq.len) < b.height
+		&& (sq.y0 + sq.len) < b.width)
 	{
 		if (b.data[sq.y0 + sq.len][sq.x0 + k] == b.obs)
 			return (sq.len);

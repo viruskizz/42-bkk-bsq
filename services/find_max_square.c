@@ -6,7 +6,7 @@
 /*   By: npiya-is <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 12:35:50 by npiya-is          #+#    #+#             */
-/*   Updated: 2021/12/15 14:53:06 by npiya-is         ###   ########.fr       */
+/*   Updated: 2021/12/15 15:11:45 by npiya-is         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,12 +85,8 @@ int	min_size(t_square sq, t_board b)
 int	expand(t_square sq, t_board b)
 {
 	int	i;
-	int	j;
-	int	k;
 
 	i = 0;
-	j = sq.y0 + i;
-	k = sq.x0 + i;
 	if (sq.x0 + sq.len == b.height  || sq.y0 + sq.len == b.width)
 		return (sq.len);
 	while (i <= sq.len && (i + sq.len) < b.height)

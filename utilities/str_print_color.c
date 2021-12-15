@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   file.h                                             :+:      :+:    :+:   */
+/*   str_print_color.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 10:55:52 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/16 00:10:07 by tsomsa           ###   ########.fr       */
+/*   Created: 2021/12/16 05:38:00 by tsomsa            #+#    #+#             */
+/*   Updated: 2021/12/16 05:40:49 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILE_H
-# define FILE_H
+#include "../headers/constants.h"
+#include "../headers/utils.h"
 
-typedef struct s_file
+void	str_print_color(char *str, char *color)
 {
-	int		size;
-	int		desc;
-	char	*name;
-	char	*msg;
-	char	*data;
-}	t_file;
-
-#endif
+	str_print(color);
+	str_print(str);
+	str_print(C_RESET);
+}

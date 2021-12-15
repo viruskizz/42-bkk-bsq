@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   file.h                                             :+:      :+:    :+:   */
+/*   validate_char.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 10:55:52 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/16 00:10:07 by tsomsa           ###   ########.fr       */
+/*   Created: 2021/12/15 19:49:32 by tsomsa            #+#    #+#             */
+/*   Updated: 2021/12/15 19:53:05 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILE_H
-# define FILE_H
-
-typedef struct s_file
+int	is_c_printable(char c)
 {
-	int		size;
-	int		desc;
-	char	*name;
-	char	*msg;
-	char	*data;
-}	t_file;
+	if (c >= 32 && c < 127)
+		return (1);
+	else
+		return (0);
+}
 
-#endif
+int	is_c_numeric(char c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
+}

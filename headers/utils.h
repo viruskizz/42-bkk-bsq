@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 10:15:08 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/14 21:46:45 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/16 05:40:44 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,12 @@
 # include "types.h"
 
 void	str_print(char *str);
+void	nbr_print(int nb);
+void	str_print_color(char *str, char *color);
 int		str_len(char *str);
 int		str_number_to_int(char *str);
+int		is_c_numeric(char c);
+int		is_c_printable(char c);
 void	char_write(char *c);
 char	*str_copy(char *dest, char *src);
 char	*str_concat(char *dest, char *src);

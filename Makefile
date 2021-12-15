@@ -6,7 +6,7 @@
 #    By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 00:29:52 by tsomsa            #+#    #+#              #
-#    Updated: 2021/12/14 02:15:24 by tsomsa           ###   ########.fr        #
+#    Updated: 2021/12/16 03:09:06 by tsomsa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #Color
@@ -20,6 +20,7 @@ f_board = fun_board.txt
 x = 20
 y = 20
 dens = 5
+files=main.c services/*.c utilities/*c
 
 all: gen_board compile execute
 
@@ -32,7 +33,7 @@ gen_board:
 	@echo ""
 
 compile:
-	@gcc -Wall -Wextra -Werror main.c -o bsq.out
+	@gcc -Wall -Wextra -Werror ${files} -o bsq.out
 	@echo "Compiled file: bsq.out"
 	@echo ""
 

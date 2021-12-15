@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   file.h                                             :+:      :+:    :+:   */
+/*   constants.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 10:55:52 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/16 00:10:07 by tsomsa           ###   ########.fr       */
+/*   Created: 2021/12/16 03:38:16 by tsomsa            #+#    #+#             */
+/*   Updated: 2021/12/16 03:49:38 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILE_H
-# define FILE_H
+#ifndef CONSTANTS_H
+# define CONSTANTS_H
 
-typedef struct s_file
-{
-	int		size;
-	int		desc;
-	char	*name;
-	char	*msg;
-	char	*data;
-}	t_file;
+# define C_RED "\033[1;31m"
+# define C_GREEN "\033[1;32m"
+# define C_RESET "\033[m"
 
 #endif

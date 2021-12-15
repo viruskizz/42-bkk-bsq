@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 10:05:51 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/15 00:32:00 by npiya-is         ###   ########.fr       */
+/*   Updated: 2021/12/16 00:14:17 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 
 typedef struct s_board
 {
+	char		*filename;
+	char		*msg;
+	int			is_valid;
 	int			width;
 	int			height;
 	char		obs;

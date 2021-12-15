@@ -6,11 +6,13 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 01:38:41 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/15 16:01:28 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/16 05:56:03 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <fcntl.h>
 #include "headers/utils.h"
 #include "headers/types.h"
 #include "headers/services.h"
@@ -18,20 +20,20 @@
 int	main(void)
 {
 	t_board	board;
+	t_file	file;
 
-	str_print("It's work\n");
+	file.desc = 0;
 	board.width = 0;
-	board = get_fun_board("assets/fun_board.txt", board);
-	// printf("width: %d\n", board.width);
-	// printf("height: %d\n", board.height);
-	// printf("obs: %c\n", board.obs);
-	// printf("empty: %c\n", board.empty);
-	// printf("full: %c\n", board.full);
-	board = find_max_square(board); 
-	// board.sq.x0 = 0;
-	// board.sq.y0 = 0;
-	// board.sq.len = 4;
-	printf("SQ %d:%d = %d\n", board.sq.y0, board.sq.x0, board.sq.len);
+	file = read_file("assets/fun_board.txt", file);
+	file = validate_map_header_file(file);
+	if (file.desc == -1)
+		printf("%s\n", file.msg);
+	board = set_board_desc(file, board);
+	board = validate_board_data(file, board);
+	board = get_fun_board(file, board);
+	free(file.data);
+	board = find_max_square(board);
 	print_fun_board(board);
+	free(board.data);
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 00:29:52 by tsomsa            #+#    #+#              #
-#    Updated: 2021/12/16 12:09:57 by npiya-is         ###   ########.fr        #
+#    Updated: 2021/12/16 17:14:16 by npiya-is         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #Color
@@ -20,13 +20,15 @@ f_board = fun_board.txt
 x = 20
 y = 20
 dens = 5
-files=main.c services/*.c utilities/*c
-objects = $(files:.c services/*.c utilities/*c = .o)
+files=main.c services/*.c
 cflags = -Wall -Werror -Wextra
 target = bsq
 
 $(target) : $(objects)
-		@gcc $(cflags) -o $@ $^
+		make -C utilities/
+		make -C services/
+		gcc -c main.c
+		gcc $(cflags) -o $(target) *.o services/*.o utilities/*.o
 		@echo "Compiled file: bsq"
 		@echo ""		
 all: compile

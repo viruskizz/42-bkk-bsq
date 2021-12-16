@@ -6,7 +6,7 @@
 /*   By: npiya-is <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 12:35:50 by npiya-is          #+#    #+#             */
-/*   Updated: 2021/12/16 18:36:58 by npiya-is         ###   ########.fr       */
+/*   Updated: 2021/12/16 19:11:36 by npiya-is         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,9 @@ t_board	set_max_square(t_square square, t_board board)
 
 int	able_to_fill(t_square sq, t_board b)
 {
-	if (b.width ==  1 && b.data[0][0] != b.obs)
+	if (b.width == 1 && b.data[0][0] != b.obs)
 	{
 		sq.len = 1;
-		
 		return (sq.len);
 	}
 	if (sq.x0 < b.width - 1 && sq.y0 < b.height - 1)

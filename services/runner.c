@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 05:36:19 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/16 06:02:07 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/16 19:08:46 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,6 @@ void	runner(int argc, char *argv[])
 	{
 		file.desc = 0;
 		file = read_file(argv[i], file);
-		str_print("FILE: ");
-		str_print(file.name);
-		str_print("\n");
 		file = runner_validate_file(file);
 		if (file.desc == -1)
 		{
@@ -56,7 +53,7 @@ void	executor(t_file file)
 	board = validate_board_data(file, board);
 	if (!board.is_valid)
 	{
-		str_print_color(board.msg, C_RED);
+		str_print_err_color(board.msg);
 		return ;
 	}
 	board = get_fun_board(file, board);
@@ -69,15 +66,13 @@ t_file	runner_validate_file(t_file file)
 {
 	if (file.desc == -1)
 	{
-		str_print_color(file.msg, C_RED);
-		str_print("\n");
+		str_print_err_color(file.msg);
 		return (file);
 	}
 	file = validate_map_header_file(file);
 	if (file.desc == -1)
 	{
-		str_print_color(file.msg, C_RED);
-		str_print("\n");
+		str_print_err_color(file.msg);
 		return (file);
 	}
 	return (file);

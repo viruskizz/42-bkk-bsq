@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 22:47:06 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/16 18:11:40 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/16 19:16:27 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -24,12 +24,7 @@ t_board	validate_board_data(t_file file, t_board board)
 	line = count_line(file.data);
 	board.is_valid = 0;
 	board.msg = malloc(100 * sizeof(char));
-	if (line < 1)
-	{
-		board.msg = str_copy(board.msg, "MAP ERROR: need header and more than 1 file");
-		return (board);
-	}
-	if (line != board.height)
+	if (line < 1 || line != board.height)
 	{
 		board.msg = str_copy(board.msg, "MAP ERROR: Height is mismatch");
 		return (board);

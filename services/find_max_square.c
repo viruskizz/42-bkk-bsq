@@ -6,7 +6,7 @@
 /*   By: npiya-is <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 12:35:50 by npiya-is          #+#    #+#             */
-/*   Updated: 2021/12/16 19:11:36 by npiya-is         ###   ########.fr       */
+/*   Updated: 2021/12/16 19:20:48 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ t_board	find_max_square(t_board board)
 
 	i = 0;
 	temp_sq.len = 0;
+	board.sq.x0 = 0;
+	board.sq.y0 = 0;
 	board.sq.len = temp_sq.len;
 	while (i + board.sq.len < board.height)
 	{

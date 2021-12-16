@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 19:05:08 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/16 17:15:12 by npiya-is         ###   ########.fr       */
+/*   Updated: 2021/12/16 17:44:39 by npiya-is         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	print_fun_board(t_board board)
 
 void	print_board_description(t_board board)
 {
-	str_print("=== Board Description update ===\n");
+	str_print("=== Board Description ===\n");
 	str_print("-Board: ");
 	nbr_print(board.height);
 	str_print(" x ");

@@ -6,7 +6,7 @@
 #    By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 00:29:52 by tsomsa            #+#    #+#              #
-#    Updated: 2021/12/16 17:41:19 by npiya-is         ###   ########.fr        #
+#    Updated: 2021/12/16 18:00:47 by npiya-is         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #Color
@@ -25,10 +25,11 @@ cflags = -Wall -Werror -Wextra
 target = bsq
 
 $(target) : $(objects)
-		make -C utilities/
-		make -C services/
-		gcc -c main.c
-		gcc $(cflags) -I headers -L lib/my/ -lutils -lservices main.o -o $(target) 
+		@make -C utilities/
+		@make -C services/
+		@gcc -c main.c
+		@gcc $(cflags) -I headers -L lib/my/ -lutils -lservices main.o -o $(target)
+		@rm -f *.o
 		@echo "Compiled file: bsq"
 		@echo ""		
 all: compile
@@ -41,11 +42,6 @@ gen_board:
 	@cat ${f_board}
 	@echo ""
 
-compile:
-	@gcc $(cflags) ${files} -o bsq.out
-	@echo "Compiled file: bsq.out"
-	@echo ""
-
 execute:
 	@echo "${GREEN}Executing your code...${RESET}"
 	@./bsq.out
@@ -53,13 +49,12 @@ execute:
 .PHONY: clean
 
 clean:
-	@rm -f *.o ${f_board}
+	@rm -f *.o 
 	@echo "*.o has cleaned"
-	@echo "${f_board} has cleaned"
 
 fclean:
-	$(MAKE) clean -C utilities/ 
-#	@rm -rf *.o ${f_board} ${target}
-#	@echo "*.o has cleaned"
-#	@echo "${f_board} has cleaned"
-#	@echo "${target} has remove"
+	@make fclean -C utilities/ 
+	@make fclean -C services/
+	@rm -rf *.o ${target}
+	@echo "*.o has cleaned"
+	@echo "${target} has remove"

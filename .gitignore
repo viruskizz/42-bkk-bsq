@@ -1,6 +1,6 @@
+.gitignore
 *.out
 *.o
 *.a
 bsq
-.gitignore
-
+*.txt

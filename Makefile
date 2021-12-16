@@ -6,7 +6,7 @@
 #    By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 00:29:52 by tsomsa            #+#    #+#              #
-#    Updated: 2021/12/16 05:58:39 by tsomsa           ###   ########.fr        #
+#    Updated: 2021/12/16 12:09:57 by npiya-is         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #Color
@@ -21,7 +21,14 @@ x = 20
 y = 20
 dens = 5
 files=main.c services/*.c utilities/*c
+objects = $(files:.c services/*.c utilities/*c = .o)
+cflags = -Wall -Werror -Wextra
+target = bsq
 
+$(target) : $(objects)
+		@gcc $(cflags) -o $@ $^
+		@echo "Compiled file: bsq"
+		@echo ""		
 all: compile
 
 gen_board:
@@ -33,7 +40,7 @@ gen_board:
 	@echo ""
 
 compile:
-	@gcc -Wall -Wextra -Werror ${files} -o bsq.out
+	@gcc $(cflags) ${files} -o bsq.out
 	@echo "Compiled file: bsq.out"
 	@echo ""
 
@@ -41,9 +48,15 @@ execute:
 	@echo "${GREEN}Executing your code...${RESET}"
 	@./bsq.out
 
+.PHONY: clean
+
 clean:
-	@rm -f *.out ${f_board}
-	@echo "*.out has cleaned"
+	@rm -f *.o ${f_board}
+	@echo "*.o has cleaned"
 	@echo "${f_board} has cleaned"
 
-
+fclean:
+	@rm -rf *.o ${f_board} ${target}
+	@echo "*.o has cleaned"
+	@echo "${f_board} has cleaned"
+	@echo "${target} has remove"

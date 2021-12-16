@@ -1,2 +1,6 @@
 *.out
+*.o
+*.a
+bsq
+.gitignore
 

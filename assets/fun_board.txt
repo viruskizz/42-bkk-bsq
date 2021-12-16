@@ -1,11 +1,2 @@
-10abc
-aaaaaaaaaa
-aaaaaaaaab
-aaaaaaaaaa
-aaaaaaaaaa
-aaaaaaaaaa
-aaaaaaaaba
-aaaaaaaaaa
-aaaaaaaaaa
-aaaaaababa
-aaaaaabaaa
+1.ox
+.

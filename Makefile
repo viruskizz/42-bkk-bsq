@@ -6,7 +6,7 @@
 #    By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 00:29:52 by tsomsa            #+#    #+#              #
-#    Updated: 2021/12/16 17:14:16 by npiya-is         ###   ########.fr        #
+#    Updated: 2021/12/16 17:41:19 by npiya-is         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #Color
@@ -28,7 +28,7 @@ $(target) : $(objects)
 		make -C utilities/
 		make -C services/
 		gcc -c main.c
-		gcc $(cflags) -o $(target) *.o services/*.o utilities/*.o
+		gcc $(cflags) -I headers -L lib/my/ -lutils -lservices main.o -o $(target) 
 		@echo "Compiled file: bsq"
 		@echo ""		
 all: compile
@@ -58,7 +58,8 @@ clean:
 	@echo "${f_board} has cleaned"
 
 fclean:
-	@rm -rf *.o ${f_board} ${target}
-	@echo "*.o has cleaned"
-	@echo "${f_board} has cleaned"
-	@echo "${target} has remove"
+	$(MAKE) clean -C utilities/ 
+#	@rm -rf *.o ${f_board} ${target}
+#	@echo "*.o has cleaned"
+#	@echo "${f_board} has cleaned"
+#	@echo "${target} has remove"

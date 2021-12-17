@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 01:38:41 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/16 05:43:48 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/17 09:48:26 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -24,7 +24,6 @@ int	main(int argc, char *argv[])
 		runner(argc, argv);
 	else
 		get_input();
-	str_print_color("== FINISH!! ==\n", C_RED);
 	return (0);
 }
 

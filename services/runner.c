@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 05:36:19 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/16 19:08:46 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/17 09:49:17 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	runner(int argc, char *argv[])
 		}
 		executor(file);
 		free(file.data);
-		str_print("\n");
 		i++;
 	}
 }
@@ -53,7 +52,7 @@ void	executor(t_file file)
 	board = validate_board_data(file, board);
 	if (!board.is_valid)
 	{
-		str_print_err_color(board.msg);
+		str_print_err(board.msg);
 		return ;
 	}
 	board = get_fun_board(file, board);
@@ -66,13 +65,13 @@ t_file	runner_validate_file(t_file file)
 {
 	if (file.desc == -1)
 	{
-		str_print_err_color(file.msg);
+		str_print_err(file.msg);
 		return (file);
 	}
 	file = validate_map_header_file(file);
 	if (file.desc == -1)
 	{
-		str_print_err_color(file.msg);
+		str_print_err(file.msg);
 		return (file);
 	}
 	return (file);

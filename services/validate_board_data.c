@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 22:47:06 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/16 19:17:50 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/17 09:36:13 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -26,21 +26,21 @@ t_board	validate_board_data(t_file file, t_board board)
 	board.msg = malloc(100 * sizeof(char));
 	if (line < 1 || line != board.height)
 	{
-		board.msg = str_copy(board.msg, "MAP ERROR: Height is mismatch");
+		board.msg = "map error";
 		return (board);
 	}
 	else if (!is_valid_body_characters(file.data, board))
 	{
-		board.msg = str_copy(board.msg, "MAP ERROR: Invalid body character");
+		board.msg = "map error";
 		return (board);
 	}
 	else if (!is_same_line_length(file.data))
 	{
-		board.msg = str_copy(board.msg, "MAP ERROR: Invalid same length");
+		board.msg = "map error";
 		return (board);
 	}
 	board.is_valid = 1;
-	board.msg = str_copy(board.msg, "Valid Board");
+	board.msg = " ";
 	return (board);
 }
 

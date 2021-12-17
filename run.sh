@@ -35,7 +35,7 @@ gcc -Wall -Wextra -Werror $main services/*.c utilities/*.c -o runner.out
 if [[ -f "runner.out" ]]
 then
 	echo "\033[1;32;47m=== Result ===\033[m";
-	./runner.out
+	leaks --atExit -- ./runner.out
 	#Clean
 	rm runner.out
 fi

@@ -6,7 +6,7 @@
 /*   By: npiya-is <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 22:16:50 by npiya-is          #+#    #+#             */
-/*   Updated: 2021/12/16 01:52:48 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/17 19:28:54 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ t_file	close_file(t_file file);
 
 t_file	read_file(char *filename, t_file file)
 {
-	file.name = malloc(str_len(filename) * sizeof(char));
-	file.msg = malloc(100 * sizeof(char));
-	file.name = str_copy(file.name, filename);
+	//file.name = malloc(str_len(filename) * sizeof(char));
+	// file.msg = malloc(100 * sizeof(char));
+	//file.name = str_copy(file.name, filename);
+	file.name = filename;
 	file = open_file(file);
 	if (file.desc == -1)
 		return (file);
@@ -44,11 +45,11 @@ t_file	open_file(t_file file)
 	file.desc = open(file.name, O_RDONLY);
 	if (file.desc == -1)
 	{
-		file.msg = str_copy(file.msg, "Error: Cannot open file.");
+		file.msg = "file error";
 		file.data = "\0";
 	}
 	else
-		file.msg = str_copy(file.msg, "Open succeed");
+		file.msg = "file error";
 	return (file);
 }
 
@@ -92,7 +93,7 @@ t_file	close_file(t_file file)
 	if (close(file.desc) == -1)
 	{
 		file.desc = -1;
-		file.msg = str_copy(file.msg, "Error Cannot close file");
+		file.msg = "file error";
 	}
 	return (file);
 }

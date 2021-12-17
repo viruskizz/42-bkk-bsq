@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 22:48:05 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/16 18:20:24 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/17 19:38:26 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../headers/utils.h"
@@ -36,18 +36,14 @@ t_file	validate_characters(t_file file, int n)
 		|| !is_c_printable(file.data[n - 3]))
 	{
 		file.desc = -1;
-		file.msg = str_copy(
-				file.msg,
-				"MAP HEADER FILE ERROR: Invalid printable characters");
+		file.msg = "map error";
 	}
 	else if ((file.data[n - 1] == file.data[n - 2]
 			|| file.data[n - 1] == file.data[n - 3])
 		|| file.data[n - 2] == file.data[n - 3])
 	{
 		file.desc = -1;
-		file.msg = str_copy(
-				file.msg,
-				"MAP FILE ERROR: character must be indentical");
+		file.msg = "map error";
 	}
 	return (file);
 }
@@ -62,9 +58,7 @@ t_file	validate_number(t_file file, int n)
 		if (!is_c_numeric(file.data[i]))
 		{
 			file.desc = -1;
-			file.msg = str_copy(
-					file.msg,
-					"MAP FILE ERROR: Invalid numeric height");
+			file.msg = "map error";
 			break ;
 		}		
 		i++;

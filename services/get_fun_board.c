@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:47:48 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/17 09:27:16 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/17 19:34:07 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -34,7 +34,7 @@ t_board	set_board_matrix_data(t_board board, char *data)
 	while (*data != '\0')
 	{
 		j = 0;
-		board.data[i] = malloc((board.width + 1) * sizeof(char));
+		board.data[i] = malloc((board.width) * sizeof(char));
 		while (*data != '\n')
 		{
 			board.data[i][j] = *data;

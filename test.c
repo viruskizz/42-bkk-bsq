@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 01:38:41 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/16 15:03:35 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/17 19:30:55 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -25,7 +25,8 @@ int	main(void)
 	arr[1] = malloc(100 * sizeof(char));
 	arr[1] = str_copy(arr[1], "assets/fun_board.txt");
 	runner(2, arr);
+	free(arr[1]);
 	free(arr);
-	str_print_color("== Finish!!  ==\n", C_RED);
+	str_print("== Finish!!  ==\n");
 	return (0);
 }

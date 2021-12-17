@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 22:47:06 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/17 09:36:13 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/17 19:39:35 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -23,7 +23,6 @@ t_board	validate_board_data(t_file file, t_board board)
 
 	line = count_line(file.data);
 	board.is_valid = 0;
-	board.msg = malloc(100 * sizeof(char));
 	if (line < 1 || line != board.height)
 	{
 		board.msg = "map error";

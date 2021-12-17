@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 05:36:19 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/17 09:49:17 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/17 19:33:46 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 void	runner(int argc, char *argv[]);
 void	executor(t_file file);
 t_file	runner_validate_file(t_file file);
+void	board_free(t_board board);
 
 void	runner(int argc, char *argv[])
 {
@@ -58,7 +59,7 @@ void	executor(t_file file)
 	board = get_fun_board(file, board);
 	board = find_max_square(board);
 	print_fun_board(board);
-	free(board.data);
+	board_free(board);
 }
 
 t_file	runner_validate_file(t_file file)
@@ -75,4 +76,19 @@ t_file	runner_validate_file(t_file file)
 		return (file);
 	}
 	return (file);
+}
+
+void	board_free(t_board board)
+{
+	int		h;
+	int		i;
+
+	h = board.height;
+	i = 0;
+	while (i < h)
+	{
+		free(board.data[i]);
+		i++;
+	}
+	free(board.data);
 }

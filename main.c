@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 01:38:41 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/17 21:18:30 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/17 21:30:23 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -17,7 +17,7 @@
 #include <unistd.h>
 
 void	get_input(void);
-t_file	run_input();
+t_file	run_input(t_file file);
 
 int	main(int argc, char *argv[])
 {

@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 05:36:19 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/17 21:18:21 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/17 21:42:46 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,15 @@ void	runner(int argc, char *argv[])
 		file = runner_validate_file(file);
 		if (file.desc == -1)
 		{
+			if (argc > 2 && i < argc - 1)
+				str_print("\n");
 			i++;
 			continue ;
 		}
 		executor(file);
 		free(file.data);
+		if (argc > 2 && i < argc - 1)
+			str_print("\n");
 		i++;
 	}
 }
@@ -59,7 +63,6 @@ void	executor(t_file file)
 	board = get_fun_board(file, board);
 	board = find_max_square(board);
 	print_fun_board(board);
-	str_print("\n");
 	board_free(board);
 }
 

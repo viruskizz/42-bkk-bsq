@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 12:00:33 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/16 05:45:33 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/17 21:09:33 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "types.h"
 
 void	runner(int argc, char *argv[]);
+void	executor(t_file file);
 t_file	validate_map_header_file(t_file file);
 t_board	set_board_desc(t_file file, t_board board);
 t_board	validate_board_data(t_file file, t_board borad);

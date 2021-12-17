@@ -6,7 +6,7 @@
 /*   By: tsomsa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 01:38:41 by tsomsa            #+#    #+#             */
-/*   Updated: 2021/12/17 19:18:40 by tsomsa           ###   ########.fr       */
+/*   Updated: 2021/12/17 21:18:30 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -17,6 +17,7 @@
 #include <unistd.h>
 
 void	get_input(void);
+t_file	run_input();
 
 int	main(int argc, char *argv[])
 {
@@ -29,21 +30,35 @@ int	main(int argc, char *argv[])
 
 void	get_input(void)
 {
-	char	input[100];
+	char	*input;
 	char	buf;
 	int		i;
-	char	*arr[2];
+	t_file	file;
 
-	str_print("INPUT:\n");
 	i = 0;
-	while (read(0, &buf, 1) > 0 && i < 100)
+	input = malloc(BUFF_SIZE * BUFF_SIZE * sizeof(char));
+	while (read(0, &buf, 1) > 0)
 	{
-		if (buf == '\n')
-			break ;
 		input[i] = buf;
 		i++;
 	}
 	input[i] = '\0';
-	arr[1] = input;
-	runner(2, arr);
+	file.data = malloc((str_len(input) + 1) * sizeof(char));
+	file.data = str_copy(file.data, input);
+	free(input);
+	file = run_input(file);
+	if (file.desc != -1)
+		executor(file);
+	free(file.data);
+}
+
+t_file	run_input(t_file file)
+{
+	file = validate_map_header_file(file);
+	if (file.desc == -1)
+	{
+		str_print_err(file.msg);
+		return (file);
+	}
+	return (file);
 }
